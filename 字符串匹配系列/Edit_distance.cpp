@@ -28,12 +28,12 @@ public:
 
 // word1 abce
 // word2 abcd
-
+//思考每个步骤，要继续比较是比较哪些段的字符串
 // add operation word1 + d, then compare word1 and word2.substr(0,len-1), samely word2 and word1.substr(len - 1)
 
 // delete operation word1 - e, then compate word1.substr(0, len-1) and word2, this is same with add operation
 
-//so swap operaion is overwrite word1's "e" to word2's "b", so compare word1.substr(0, len-1)  and word2.substr(0, len-1)
+// so swap operaion is overwrite word1's "e" to word2's "b", so compare word1.substr(0, len-1)  and word2.substr(0, len-1)
 
 
 //pass by dp， we can memorize the result， and it will descrease the O（n） of algorithm
