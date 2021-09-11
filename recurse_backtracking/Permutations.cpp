@@ -10,7 +10,8 @@ public:
         if(len == 0){
             return  res;
         }
-        vector<bool> used = {false};
+        // vector<bool> used = {false};
+        vector<bool> used(len, false);
         vector<int> path;
         dfs(nums, 0, len, used, path, res);
         return res;
@@ -21,7 +22,7 @@ public:
 
 
 private:        
-    void dfs(vector<int>& nums, int depth, int len, vector<bool> used, vector<int> &path, vector<vector<int>> &res){
+    void dfs(vector<int>& nums, int depth, int len, vector<bool> used, vector<int> path, vector<vector<int>> &res){
         if(depth == len){
             res.push_back(path);
             return;
