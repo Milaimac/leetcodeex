@@ -9,7 +9,7 @@ using namespace std;
 // 选择列表，撤回操作，已经走过的路径，层次（步数） 
 
 
-class Solution {
+class Solution_err {
 // 当时想的是，把重复的数给排除掉就可以了，可是这样遍历的时候就会导致dfs后续的步骤出错
 
 public:
@@ -21,7 +21,7 @@ public:
         }
         int len = quchong.size();
         // sort(nums.begin(), nums.end());
-        vector<vector<int>> res;
+        // vector<vector<int>> res;
         // vector<bool> used = {false};
         vector<bool> used(len, false);
         vector<int> path;
@@ -99,3 +99,9 @@ public:
         }
     }
 };
+
+int main(){
+    vector<int> nums = {1,2,1};
+    Solution sl;
+    sl.permuteUnique(nums);
+}

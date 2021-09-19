@@ -2,7 +2,7 @@
 #include<vector>
 #include<iostream>
 using namespace std;
-
+// 复原IP地址
 class Solution {
 private:
     static constexpr int SEG_OUT = 4;
