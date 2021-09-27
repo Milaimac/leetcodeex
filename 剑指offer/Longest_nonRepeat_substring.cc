@@ -2,23 +2,27 @@
 #include <unordered_map>
 #include <algorithm>
 using namespace std;
+// 剑指 Offer 48. 最长不含重复字符的子字符串
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        unordered_map<char, int> set;
-        int maxlen = 0;
+        int i = -1, j = 0;
+        int res = 0;
+        unordered_map<char,int> chartoIdx;
         for(auto& ch:s){
-            if(!set.count(ch)){
-                // set.insert(ch);
-                set[ch] += 1;
+            if(!chartoIdx.count(ch)){
+                // ++j;
+                chartoIdx[ch] = j;
             }
             else{
-                maxlen = max(static_cast<int>( set.size()), maxlen);
-                set.clear();
+                i = max(chartoIdx[ch], i);
+                chartoIdx[ch] = j;
             }
-            
+
+            res = max(res, j-i);
+            ++j;
         }
-        return maxlen;
+        return res;
     }
 };
 
