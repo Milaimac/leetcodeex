@@ -1,6 +1,7 @@
 #include <vector>
 #include <iostream>
 using namespace std;
+// 34. 在排序数组中查找元素的第一个和最后一个位置
 class Solution {
 public:
     // 先使用二分查找， 查找到后使用双指针分流到前后两端
@@ -17,10 +18,10 @@ public:
         }
         int left = index, right = index;
 
-        while(nums[left] == target){
+        while(left >= 0 && nums[left] == target){
             --left;
         }
-        while(nums[right] == target){
+        while(right < nums.size() && nums[right] == target){
             ++right;
         }
         res[0] = left+1;
@@ -45,8 +46,6 @@ public:
         return left;
     }
 };
-
-
 int main(){
     vector<int> input = {1};
     Solution sl;
