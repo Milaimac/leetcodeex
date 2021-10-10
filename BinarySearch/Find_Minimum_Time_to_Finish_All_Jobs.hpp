@@ -2,7 +2,7 @@
 #include<algorithm>
 #include<vector>
 using namespace std;
-//k是工人数量，jobs是工作
+// k是工人数量，jobs是工作
 // 用二分查找法，先将jobs累加起来除以k，然后去查找这个数的最小。----> 不行，正常来讲更多的是后面和前面相加得到目标值。
 
 // 动态规划。 要求最小工作时间。 
