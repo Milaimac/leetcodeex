@@ -4,7 +4,14 @@
 #include <unordered_map>
 #include <set>
 using namespace std;
+// 给定一个 m x n 二维字符网格 board 和一个单词（字符串）列表 words，找出所有同时在二维网格和字典中出现的单词。
 
+// 单词必须按照字母顺序，通过 相邻的单元格 内的字母构成，其中“相邻”单元格是那些水平相邻或垂直相邻的单元格。同一个单元格内的字母在一个单词中不允许被重复使用。
+
+// 创建一个字典树
+// 通过将字典中的字符串构建一个字典树。 
+// 而后， 如果在board使用dfs， 如果board有字典树上的单词， 那么继续dfs
+// root = root->children[ch] 到下一个节点， 
 struct TrieNode{
     string word;
     unordered_map<char,TrieNode*> children;
