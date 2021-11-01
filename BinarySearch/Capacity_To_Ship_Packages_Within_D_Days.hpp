@@ -4,6 +4,9 @@
 #include<numeric>
 using namespace std;
 // 1011. 在 D 天内送达包裹的能力
+// 使用二分查找， 估计船的最低载重能力
+// 1. 首先货物中的最大重量 就是 船保底的载重能力，2. 所有货物的重量就是船最大的载重能力
+// 2. 然后根据这个载重能力进行二分
 class Solution{
 public:
     int shipWithinDays(vector<int>& weights, int D){
