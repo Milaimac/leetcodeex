@@ -39,6 +39,7 @@ public:
 
     // 假设环长为L, 从起点到环入口的步数为a ， 从环的入口继续走到b步达到相遇位置， 从相遇位置继续走c步到环的入口， 则有b+c = L;
     // 慢指针走了a+b步， 快指针走了2(a+b)步， 从另一个角度考虑， 在相遇位置， 快指针比慢指针多走了若干圈 -- a + b + kL
+    
 
     // 2(a+b) = a+b+kL
 
@@ -46,8 +47,16 @@ public:
         int slow = 0, fast = 0;
         do{
             slow = nums[slow];
+            fast = nums[nums[fast]];
+        }while(slow != fast);
+
+        slow = 0;
+        while(slow != fast){
+            slow = nums[slow];
             fast = nums[fast];
-        }while(slow != fast)
+        }
+
+        return slow;
     }
 };
 
