@@ -44,6 +44,6 @@ public:
 
         prev->next = l1 == nullptr ? l2 : l1;
 
-        return 
+        return prevHead->next;
     }
 };
