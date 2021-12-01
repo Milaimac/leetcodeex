@@ -1,7 +1,7 @@
 /*
  * @Date: 2021-11-13 19:30:04
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-14 11:31:27
+ * @LastEditTime: 2021-11-20 23:06:43
  * @FilePath: /leetcodeex/codetop/字符串/Reverse_Words_in_a_String.cc
  */
 #include <string>
@@ -25,7 +25,8 @@ public:
         int idx = 0;
         for(int start = 0; start < n;++start){
             if(s[start] != ' '){
-                if(idx != 0)    s[idx++] = ' ';//如果不为空， 那么填一个空白字符将idx移动到下一个单词的开头位置
+                if(idx != 0)    
+                    s[idx++] = ' ';//如果不为空， 那么填一个空白字符将idx移动到下一个单词的开头位置
                 int end = start;
                 while(end < n && s[end] != ' ')
                     s[idx++] = s[end++];
