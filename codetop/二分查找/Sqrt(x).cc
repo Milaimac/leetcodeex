@@ -1,10 +1,11 @@
 /*
  * @Date: 2021-11-26 18:12:03
  * @LastEditors: kafier
- * @LastEditTime: 2021-11-26 20:10:28
+ * @LastEditTime: 2021-12-06 12:13:11
  */
 #include <math.h>
-
+#include <iostream>
+using namespace std;
 class Solution {
 public:
     /**
@@ -31,7 +32,7 @@ public:
             int mid = left + (right-left)/2;
             if((long long) mid * mid  <= x){
                 ans = mid;
-                left = mid + 1;
+                left = mid + 1; //如果是浮点数， 可就不敢轻易地使用+1了
             }
             else{
                 right = mid;
@@ -61,3 +62,27 @@ public:
     }
 };
 
+// 如果要求精确到几位数
+
+float Sqrt(float x)
+{
+    const float e = 0.0001;
+    float low = 0, high = x, mid = (low + high) / 2;
+    while(mid * mid - x > e || mid * mid - x < -e){
+        if(mid * mid - x > e)
+        {
+            high = mid;
+        }
+        else if(mid * mid - x < -e){
+            low = mid;
+        }
+        mid = (low+high) / 2;
+    }
+    return mid;
+}
+
+int main()
+{
+    float x = 4.0;
+    cout << Sqrt(x) << endl;
+}
